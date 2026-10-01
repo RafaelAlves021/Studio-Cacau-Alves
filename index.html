@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studio Cacau Alves | 17 Anos de Excelência em Beleza</title>
+  
+  <!-- Google Fonts: Cormorant Garamond (Editorial Serif) & Plus Jakarta Sans (Modern Clean Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Tailwind CSS Framework CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              rose: '#9E5A63',       // Rosa queimado principal
+              roseDark: '#783E46',   // Rosa queimado profundo
+              roseLight: '#C48890',  // Rosa pó elegante
+              cream: '#FAF6F4',      // Off-white aquecido de fundo
+              sand: '#EFE8E3',       // Bege neutro editorial
+              charcoal: '#1E191B',   // Grafite profundo para textos nobres
+              muted: '#6E6769'       // Texto secundário refinado
+            }
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Suavização de renderização tipográfica */
+    body {
+      background-color: #FAF6F4;
+      color: #1E191B;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Animação Contínua para Marquee de Depoimentos */
+    @keyframes marqueeScroll {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .animate-marquee {
+      display: flex;
+      width: max-content;
+      animation: marqueeScroll 32s linear infinite;
+    }
+
+    .animate-marquee:hover {
+      animation-play-state: paused;
+    }
+
+    /* Galeria Masonry elegante com colunas CSS */
+    .masonry-gallery {
+      column-count: 1;
+      column-gap: 1.5rem;
+    }
+    @media (min-width: 640px) {
+      .masonry-gallery { column-count: 2; }
+    }
+    @media (min-width: 1024px) {
+      .masonry-gallery { column-count: 3; }
+    }
+    .masonry-item {
+      break-inside: avoid;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Efeito de Vidro Fosco Glassmorphism para Header */
+    .header-scrolled {
+      background-color: rgba(250, 246, 244, 0.94);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 4px 20px -2px rgba(120, 62, 70, 0.08);
+      border-bottom: 1px solid rgba(158, 90, 99, 0.12);
+    }
+
+    /* Estilo sutil de linha decorativa editorial */
+    .editorial-badge::before {
+      content: '';
+      display: inline-block;
+      width: 2rem;
+      height: 1px;
+      background-color: #9E5A63;
+      margin-right: 0.75rem;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body class="selection:bg-brand-roseLight selection:text-white">
+
+  <!-- HEADER NAVEGAÇÃO -->
+  <header id="main-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-5 bg-transparent">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
+      <!-- Logotipo Editorial -->
+      <a href="#" class="group flex flex-col items-start focus:outline-none">
+        <span class="font-serif text-2xl md:text-3xl font-bold tracking-tight text-brand-charcoal group-hover:text-brand-rose transition-colors duration-300">
+          Studio Cacau Alves
+        </span>
+        <span class="text-[10px] md:text-xs tracking-[0.25em] uppercase text-brand-rose font-medium mt-[-2px]">
+          Haute Coiffure & Esthétique • 17 Anos
+        </span>
+      </a>
+
+      <!-- Menu Desktop -->
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide text-brand-charcoal">
+        <a href="#sobre" class="hover:text-brand-rose transition-colors duration-200">História</a>
+        <a href="#especialidades" class="hover:text-brand-rose transition-colors duration-200">Especialidades</a>
+        <a href="#cuidados" class="hover:text-brand-rose transition-colors duration-200">Cuidados Completos</a>
+        <a href="#galeria" class="hover:text-brand-rose transition-colors duration-200">Resultados</a>
+        <a href="#depoimentos" class="hover:text-brand-rose transition-colors duration-200">Avaliações</a>
+        <a href="#contato" class="hover:text-brand-rose transition-colors duration-200">Localização</a>
+      </nav>
+
+      <!-- Botão CTA Desktop & Hamburguer Mobile -->
+      <div class="flex items-center space-x-4">
+        <a href="https://wa.me/5521964107561?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20agendamento%20no%20Studio%20Cacau%20Alves." 
+           target="_blank" 
+           rel="noopener noreferrer"
+           class="hidden sm:inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-brand-rose hover:bg-brand-roseDark text-white text-xs md:text-sm font-medium tracking-wider uppercase shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5">
+          <i class="fa-brands fa-whatsapp text-base"></i>
+          <span>Agendar Horário</span>
+        </a>
+
+        <!-- Botão Menu Mobile -->
+        <button id="menu-toggle-btn" 
+                aria-label="Abrir Menu" 
+                class="md:hidden text-brand-charcoal focus:outline-none p-2 rounded-lg hover:bg-brand-sand transition-colors">
+          <i id="menu-icon" class="fa-solid fa-bars text-xl"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Gaveta Menu Mobile -->
+    <div id="mobile-menu" class="hidden md:hidden px-6 pt-4 pb-8 bg-brand-cream/95 backdrop-blur-md border-b border-brand-rose/20 transition-all duration-300">
+      <div class="flex flex-col space-y-4 text-center font-medium text-brand-charcoal">
+        <a href="#sobre" class="mobile-nav-link py-2 hover:text-brand-rose transition-colors">História & Essência</a>
+        <a href="#especialidades" class="mobile-nav-link py-2 hover:text-brand-rose transition-colors">Especialidades em Cabelo</a>
+        <a href="#cuidados" class="mobile-nav-link py-2 hover:text-brand-rose transition-colors">Cuidados Completos</a>
+        <a href="#galeria" class="mobile-nav-link py-2 hover:text-brand-rose transition-colors">Galeria Editorial</a>
+        <a href="#depoimentos" class="mobile-nav-link py-2 hover:text-brand-rose transition-colors">O Que Dizem</a>
+        <a href="#contato" class="mobile-nav-link py-2 hover:text-brand-rose transition-colors">Contato & Localização</a>
+        <div class="pt-2">
+          <a href="https://wa.me/5521964107561?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20atendimento%20no%20Studio%20Cacau%20Alves." 
+             target="_blank" 
+             rel="noopener noreferrer"
+             class="inline-flex justify-center items-center gap-2 w-full px-6 py-3 rounded-full bg-brand-rose text-white text-sm font-semibold uppercase tracking-wider shadow">
+            <i class="fa-brands fa-whatsapp text-lg"></i>
+            <span>Agendar pelo WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- SEÇÃO HERO ASSIMÉTRICO -->
+    <section class="relative pt-32 pb-20 md:pt-40 md:pb-28 lg:pt-48 overflow-hidden">
+      <!-- Detalhes de luz de fundo suave -->
+      <div class="absolute -top-32 -left-32 w-96 h-96 bg-brand-roseLight/20 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute top-1/2 -right-32 w-96 h-96 bg-brand-sand/60 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto px-6 md:px-12">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          
+          <!-- Coluna de Texto (Editorial Esquerda - 7 colunas) -->
+          <div class="lg:col-span-7 flex flex-col items-start z-10">
+            <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-brand-sand/80 border border-brand-rose/30 text-brand-rose text-xs tracking-wider uppercase font-semibold mb-6">
+              <i class="fa-regular fa-star text-amber-600"></i>
+              <span>Tradição & Vanguarda • Desde 2009</span>
+            </div>
+
+            <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-light leading-[1.08] text-brand-charcoal mb-6">
+              17 anos transformando <br>
+              <span class="italic font-normal text-brand-rose">beleza autêntica</span> <br class="hidden sm:inline">
+              e autoestima singular.
+            </h1>
+
+            <p class="text-brand-muted text-base md:text-lg max-w-xl font-light leading-relaxed mb-8">
+              Um refúgio de sofisticação onde a maestria técnica encontra o cuidado humanizado. Especialistas em alisamentos de caimento natural, loiros luminosos preservados e protocolos de beleza integrados.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto">
+              <a href="https://wa.me/5521964107561?text=Ol%C3%A1%2C%20Studio%20Cacau%20Alves!%20Desejo%20conhecer%20a%20agenda%20e%20valores%20para%20atendimento." 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 class="inline-flex justify-center items-center gap-3 px-8 py-4 rounded-full bg-brand-rose hover:bg-brand-roseDark text-white text-sm uppercase tracking-widest font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                <span>Agendar Sua Experiência</span>
+              </a>
+
+              <a href="#especialidades" 
+                 class="inline-flex justify-center items-center gap-2 px-8 py-4 rounded-full bg-white/70 hover:bg-white text-brand-charcoal border border-brand-rose/20 text-sm uppercase tracking-widest font-semibold transition-all duration-300">
+                <span>Ver Especialidades</span>
+                <i class="fa-solid fa-arrow-down text-xs text-brand-rose"></i>
+              </a>
+            </div>
+
+            <!-- Selo de garantia e confiança sutil -->
+            <div class="mt-10 flex items-center gap-4 text-xs tracking-wider text-brand-muted uppercase">
+              <span class="flex text-amber-500">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </span>
+              <span>Classificação Máxima 5.0 no Google Avaliações</span>
+            </div>
+          </div>
+
+          <!-- Coluna Visual Assimétrica (Direita - 5 colunas) -->
+          <div class="lg:col-span-5 relative">
+            <div class="relative mx-auto max-w-md lg:max-w-none">
+              <!-- Moldura Principal com Foto Profissional de Salão/Cabelo -->
+              <div class="relative z-10 rounded-2xl overflow-hidden shadow-2xl border-4 border-white aspect-[4/5] group">
+                <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1000&q=80" 
+                     alt="Atendimento especializado no Studio Cacau Alves" 
+                     class="w-full h-full object-cover transform duration-700 group-hover:scale-105"
+                     loading="eager"
+                     onerror="this.src='https://placehold.co/800x1000/9E5A63/FFFFFF?text=Studio+Cacau+Alves'">
+                
+                <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal/60 via-transparent to-transparent"></div>
+                
+                <div class="absolute bottom-6 left-6 right-6 text-white">
+                  <p class="text-xs uppercase tracking-widest font-light text-brand-sand">Ambiente Acolhedor & Exclusivo</p>
+                  <p class="font-serif text-xl italic font-normal">Irajá, Rio de Janeiro</p>
+                </div>
+              </div>
+
+              <!-- Cartão Flutuante Superior com Selo de 17 Anos -->
+              <div class="absolute -top-6 -left-6 z-20 bg-white/95 backdrop-blur-md p-4 rounded-xl shadow-xl border border-brand-sand hidden sm:flex items-center gap-3">
+                <div class="w-12 h-12 rounded-full bg-brand-sand flex items-center justify-center text-brand-rose">
+                  <i class="fa-solid fa-crown text-xl"></i>
+                </div>
+                <div>
+                  <div class="font-serif text-lg font-bold text-brand-charcoal leading-tight">17 Anos</div>
+                  <div class="text-[11px] uppercase tracking-wider text-brand-muted">Selo de Autoridade</div>
+                </div>
+              </div>
+
+              <!-- Cartão Flutuante Inferior com Tag de Produtos Profissionais -->
+              <div class="absolute -bottom-6 -right-6 z-20 bg-brand-charcoal text-white p-4 rounded-xl shadow-xl border border-brand-rose/30 hidden sm:block">
+                <div class="flex items-center gap-2 text-xs text-brand-roseLight font-medium">
+                  <i class="fa-solid fa-sparkles"></i>
+                  <span>Tecnologia & Saúde Capilar</span>
+                </div>
+                <div class="text-sm font-serif italic text-brand-cream mt-0.5">
+                  Resultados duradouros com toque sedoso
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- BARRA DE ESTATÍSTICAS ANIMADAS (SCROLL TRIGGERED) -->
+    <section id="stats-section" class="py-12 bg-white border-y border-brand-sand">
+      <div class="max-w-7xl mx-auto px-6 md:px-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 divide-y md:divide-y-0 md:divide-x divide-brand-sand text-center">
+          
+          <!-- Estatística 1 -->
+          <div class="pt-6 md:pt-0 px-4">
+            <div class="flex items-center justify-center font-serif text-4xl sm:text-5xl md:text-6xl font-light text-brand-rose mb-1">
+              <span class="counter-number" data-target="17">0</span>
+              <span class="text-2xl md:text-3xl ml-1 font-sans font-light text-brand-roseDark">+</span>
+            </div>
+            <p class="font-sans text-xs sm:text-sm tracking-widest uppercase font-semibold text-brand-charcoal">
+              Anos de História no Mercado
+            </p>
+            <p class="text-xs text-brand-muted mt-1">Tradição, evolução e maestria técnica continuada</p>
+          </div>
+
+          <!-- Estatística 2 -->
+          <div class="pt-6 md:pt-0 px-4">
+            <div class="flex items-center justify-center font-serif text-4xl sm:text-5xl md:text-6xl font-light text-brand-rose mb-1">
+              <span class="counter-number" data-target="5.0" data-decimals="1">0.0</span>
+              <span class="text-2xl ml-2 text-amber-500"><i class="fa-solid fa-star"></i></span>
+            </div>
+            <p class="font-sans text-xs sm:text-sm tracking-widest uppercase font-semibold text-brand-charcoal">
+              Estrelas de Avaliação
+            </p>
+            <p class="text-xs text-brand-muted mt-1">Pontuação máxima e satisfação reconhecida</p>
+          </div>
+
+          <!-- Estatística 3 -->
+          <div class="pt-6 md:pt-0 px-4">
+            <div class="flex items-center justify-center font-serif text-4xl sm:text-5xl md:text-6xl font-light text-brand-rose mb-1">
+              <span class="counter-number" data-target="68">0</span>
+              <span class="text-2xl md:text-3xl ml-1 font-sans font-light text-brand-roseDark">+</span>
+            </div>
+            <p class="font-sans text-xs sm:text-sm tracking-widest uppercase font-semibold text-brand-charcoal">
+              Avaliações 100% Positivas no Google
+            </p>
+            <p class="text-xs text-brand-muted mt-1">Depoimentos reais de clientes fidelizadas</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE O STUDIO CACAU ALVES -->
+    <section id="sobre" class="py-24 md:py-32 relative">
+      <div class="max-w-7xl mx-auto px-6 md:px-12">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          
+          <!-- Coluna Visual: Colagem de Fotos Elegante (5 Colunas) -->
+          <div class="lg:col-span-5 order-2 lg:order-1 relative">
+            <div class="relative">
+              <!-- Imagem Principal -->
+              <div class="rounded-2xl overflow-hidden shadow-xl aspect-[3/4] border-8 border-white">
+                <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80" 
+                     alt="Detalhe de fios de cabelo saudáveis e luminosos" 
+                     class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                     loading="lazy"
+                     onerror="this.src='https://placehold.co/600x800/FAF6F4/9E5A63?text=Trabalho+Studio+Cacau'">
+              </div>
+
+              <!-- Imagem Sobreposta Menor -->
+              <div class="absolute -bottom-8 -right-6 w-3/5 rounded-xl overflow-hidden shadow-2xl border-4 border-white aspect-square hidden sm:block">
+                <img src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=600&q=80" 
+                     alt="Ambiente de lavatório e bem estar no salão" 
+                     class="w-full h-full object-cover"
+                     loading="lazy"
+                     onerror="this.src='https://placehold.co/400x400/9E5A63/FFFFFF?text=Cuidado+Capilar'">
+              </div>
+
+              <!-- Placa Decorativa de Fundação -->
+              <div class="absolute -top-4 -left-4 bg-brand-sand px-5 py-3 rounded-lg border border-brand-rose/20 shadow">
+                <span class="text-xs uppercase tracking-widest text-brand-roseDark font-semibold">Fundado com propósito</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Coluna Textual: Narrativa Editorial (7 Colunas) -->
+          <div class="lg:col-span-7 order-1 lg:order-2">
+            <span class="editorial-badge text-xs uppercase tracking-widest text-brand-rose font-semibold mb-3 block">
+              História e Filosofia
+            </span>
+
+            <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-light text-brand-charcoal mb-6 leading-tight">
+              Uma trajetória construída com amor, rigor técnico e <span class="italic font-normal text-brand-rose">respeito à identidade</span> de cada mulher.
+            </h2>
+
+            <div class="space-y-4 text-brand-muted font-light leading-relaxed text-base md:text-lg">
+              <p>
+                Há <strong>17 anos</strong> cuidando da beleza e autoestima das nossas clientes, o <strong>Studio Cacau Alves</strong> consolidou-se como um polo de referência na zona norte do Rio de Janeiro em procedimentos capilares de altíssima exigência.
+              </p>
+              <p>
+                Nosso grande diferencial é orquestrar <em>experiência consagrada, inovação científica e acolhimento singular</em> em cada atendimento. Não trabalhamos apenas com a estética visual: utilizamos produtos profissionais de padrão internacional e tecnologias que priorizam a saúde intrínseca da fibra capilar.
+              </p>
+              <p>
+                Com o passar dos anos, expandimos nosso olhar integral para abranger um rol de <strong>cuidados completos</strong> — tratamentos faciais revigorantes, estética de unhas em gel e fibra, design e lifting de cílios e depilação. Um refúgio cuidadosamente projetado para você se sentir valorizada, acolhida e sair irradiando segurança.
+              </p>
+            </div>
+
+            <!-- Destaques em linha com ícones minimalistas -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8 pt-6 border-t border-brand-sand">
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 rounded-full bg-brand-sand/60 flex items-center justify-center text-brand-rose flex-shrink-0 mt-0.5">
+                  <i class="fa-solid fa-check text-xs"></i>
+                </div>
+                <div>
+                  <h4 class="text-sm font-semibold text-brand-charcoal uppercase tracking-wider">Produtos Nobres</h4>
+                  <p class="text-xs text-brand-muted mt-0.5">Linhas profissionais homologadas e seguras.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 rounded-full bg-brand-sand/60 flex items-center justify-center text-brand-rose flex-shrink-0 mt-0.5">
+                  <i class="fa-solid fa-check text-xs"></i>
+                </div>
+                <div>
+                  <h4 class="text-sm font-semibold text-brand-charcoal uppercase tracking-wider">Atendimento Dedicado</h4>
+                  <p class="text-xs text-brand-muted mt-0.5">Diagnóstico minucioso antes de qualquer procedimento.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ESPECIALIDADES EM CABELO (SHOWCASE VISUAL DIFERENCIADO) -->
+    <section id="especialidades" class="py-24 bg-brand-charcoal text-white relative overflow-hidden">
+      <!-- Imagem de fundo estilizada em baixa opacidade para atmosfera premium -->
+      <div class="absolute inset-0 opacity-15 pointer-events-none">
+        <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=1920&q=80" 
+             alt="Textura de Cabelo Editorial" 
+             class="w-full h-full object-cover">
+      </div>
+
+      <div class="relative max-w-7xl mx-auto px-6 md:px-12 z-10">
+        <!-- Cabeçalho da Seção -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+          <div>
+            <div class="flex items-center gap-3 text-brand-roseLight text-xs uppercase tracking-[0.25em] font-semibold mb-3">
+              <span class="w-8 h-px bg-brand-roseLight"></span>
+              <span>Destaque Principal</span>
+            </div>
+            <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-light leading-tight">
+              Especialidades em <span class="italic font-normal text-brand-roseLight">Cabelo</span>
+            </h2>
+          </div>
+          <p class="text-brand-sand/80 max-w-md text-sm sm:text-base font-light">
+            Técnicas apuradas ao longo de quase duas décadas. Fios alinhados com balanço vivo, clareamento inteligente e regeneração molecular.
+          </p>
+        </div>
+
+        <!-- Grid de 4 Especialidades com Design de Luxo Sobreposto -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <!-- Card 1: Alisamento Perfeito -->
+          <div class="group relative rounded-2xl bg-white/5 border border-white/10 hover:border-brand-roseLight/40 p-8 transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between backdrop-blur-sm">
+            <div>
+              <span class="font-serif text-3xl text-brand-roseLight/40 group-hover:text-brand-roseLight font-bold transition-colors">01</span>
+              <h3 class="font-serif text-2xl font-normal text-white mt-4 mb-3">Alisamento Perfeito</h3>
+              <p class="text-sm text-gray-300 font-light leading-relaxed">
+                Alinhamento absoluto, selagem cuticular e redução total do frizz, preservando o brilho espelhado e o movimento natural das mechas.
+              </p>
+            </div>
+            <div class="mt-8 pt-6 border-t border-white/10 flex items-center justify-between">
+              <span class="text-xs uppercase tracking-widest text-brand-sand/70 font-medium">Sem rigidez artificial</span>
+              <a href="https://wa.me/5521964107561?text=Ol%C3%A1!%20Gostaria%20de%20consultar%20sobre%20o%20servi%C3%A7o%20de%20Alisamento%20Perfeito." 
+                 target="_blank" 
+                 class="w-9 h-9 rounded-full bg-brand-rose hover:bg-brand-roseLight text-white flex items-center justify-center transition-colors">
+                <i class="fa-solid fa-arrow-right text-xs"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 2: Cabelos Loiros -->
+          <div class="group relative rounded-2xl bg-white/5 border border-white/10 hover:border-brand-roseLight/40 p-8 transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between backdrop-blur-sm">
+            <div>
+              <span class="font-serif text-3xl text-brand-roseLight/40 group-hover:text-brand-roseLight font-bold transition-colors">02</span>
+              <h3 class="font-serif text-2xl font-normal text-white mt-4 mb-3">Cabelos Loiros</h3>
+              <p class="text-sm text-gray-300 font-light leading-relaxed">
+                Tons platinados, dourados nobres, areia e bege dos sonhos. Descoloração segura com protetores químicos e personalização para o seu tom de pele.
+              </p>
+            </div>
+            <div class="mt-8 pt-6 border-t border-white/10 flex items-center justify-between">
+              <span class="text-xs uppercase tracking-widest text-brand-sand/70 font-medium">Clareamento consciente</span>
+              <a href="https://wa.me/5521964107561?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20uma%20avalia%C3%A7%C3%A3o%20para%20Cabelo%20Loiro." 
+                 target="_blank" 
+                 class="w-9 h-9 rounded-full bg-brand-rose hover:bg-brand-roseLight text-white flex items-center justify-center transition-colors">
+                <i class="fa-solid fa-arrow-right text-xs"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 3: Mechas Personalizadas -->
+          <div class="group relative rounded-2xl bg-white/5 border border-white/10 hover:border-brand-roseLight/40 p-8 transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between backdrop-blur-sm">
+            <div>
+              <span class="font-serif text-3xl text-brand-roseLight/40 group-hover:text-brand-roseLight font-bold transition-colors">03</span>
+              <h3 class="font-serif text-2xl font-normal text-white mt-4 mb-3">Mechas & Iluminação</h3>
+              <p class="text-sm text-gray-300 font-light leading-relaxed">
+                Balayage, baby lights, morena iluminada e contornos estratégicos. Efeitos de profundidade e transições harmônicas sem demarcações rústicas.
+              </p>
+            </div>
+            <div class="mt-8 pt-6 border-t border-white/10 flex items-center justify-between">
+              <span class="text-xs uppercase tracking-widest text-brand-sand/70 font-medium">Contraste e sofisticação</span>
+              <a href="https://wa.me/5521964107561?text=Ol%C3%A1!%20Quero%20agendar%20uma%20sess%C3%A3o%20de%20Mechas%20com%20Cacau%20Alves." 
+                 target="_blank" 
+                 class="w-9 h-9 rounded-full bg-brand-rose hover:bg-brand-roseLight text-white flex items-center justify-center transition-colors">
+                <i class="fa-solid fa-arrow-right text-xs"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 4: Alta Performance -->
+          <div class="group relative rounded-2xl bg-white/5 border border-white/10 hover:border-brand-roseLight/40 p-8 transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between backdrop-blur-sm">
+            <div>
+              <span class="font-serif text-3xl text-brand-roseLight/40 group-hover:text-brand-roseLight font-bold transition-colors">04</span>
+              <h3 class="font-serif text-2xl font-normal text-white mt-4 mb-3">Alta Performance</h3>
+              <p class="text-sm text-gray-300 font-light leading-relaxed">
+                Cronogramas intensivos, reposição lipídica e reconstrução de pontes de queratina. Ressurreição capilar para fios fragilizados e ressecados.
+              </p>
+            </div>
+            <div class="mt-8 pt-6 border-t border-white/10 flex items-center justify-between">
+              <span class="text-xs uppercase tracking-widest text-brand-sand/70 font-medium">Saúde aos fios</span>
+              <a href="https://wa.me/5521964107561?text=Ol%C3%A1!%20Preciso%20de%20um%20Tratamento%20de%20Alta%20Performance%20para%20meu%20cabelo." 
+                 target="_blank" 
+                 class="w-9 h-9 rounded-full bg-brand-rose hover:bg-brand-roseLight text-white flex items-center justify-center transition-colors">
+                <i class="fa-solid fa-arrow-right text-xs"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Banner de Chamada Dentro da Seção -->
+        <div class="mt-14 p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-brand-roseDark to-brand-rose flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl">
+          <div>
+            <h4 class="font-serif text-xl sm:text-2xl text-white font-normal">Dúvidas sobre qual técnica se adapta ao seu fio?</h4>
+            <p class="text-xs sm:text-sm text-brand-cream/80 mt-1">Realizamos um teste de mecha prévio e diagnóstico personalizado sem compromisso.</p>
+          </div>
+          <a href="https://wa.me/5521964107561?text=Ol%C3%A1!%20Gostaria%20de%20uma%20orienta%C3%A7%C3%A3o%20sobre%20o%20melhor%20procedimento%20para%20meu%20cabelo." 
+             target="_blank" 
+             class="whitespace-nowrap px-6 py-3 rounded-full bg-white text-brand-charcoal text-xs uppercase tracking-widest font-semibold hover:bg-brand-sand transition-all">
+            Falar com a Especialista
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CUIDADOS COMPLETOS (ORGANIZAÇÃO EM ABAS INTERATIVAS) -->
+    <section id="cuidados" class="py-24 md:py-32">
+      <div class="max-w-7xl mx-auto px-6 md:px-12">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <span class="editorial-badge text-xs uppercase tracking-widest text-brand-rose font-semibold mb-3 inline-block">
+            Menu de Bem-Estar
+          </span>
+          <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-light text-brand-charcoal leading-tight">
+            Cuidados Completos em um só lugar
+          </h2>
+          <p class="text-brand-muted text-sm sm:text-base font-light mt-4">
+            Do topo aos pés: otimize o seu tempo em um ambiente unificado e sinta-se cuidada em todos os detalhes estéticos.
+          </p>
+        </div>
+
+        <!-- Botões de Troca de Abas (Tab Navigation) -->
+        <div class="flex flex-wrap justify-center gap-2 sm:gap-4 mb-12">
+          <button class="tab-btn active px-6 py-3 rounded-full text-xs sm:text-sm tracking-wider uppercase font-semibold transition-all duration-300 bg-brand-rose text-white shadow-md" data-target="tab-unhas">
+            <i class="fa-regular fa-hand text-xs mr-2"></i>Unhas & Esmaltação
+          </button>
+          <button class="tab-btn px-6 py-3 rounded-full text-xs sm:text-sm tracking-wider uppercase font-semibold transition-all duration-300 bg-brand-sand/80 text-brand-charcoal hover:bg-brand-sand" data-target="tab-olhar">
+            <i class="fa-regular fa-eye text-xs mr-2"></i>Cílios & Sobrancelhas
+          </button>
+          <button class="tab-btn px-6 py-3 rounded-full text-xs sm:text-sm tracking-wider uppercase font-semibold transition-all duration-300 bg-brand-sand/80 text-brand-charcoal hover:bg-brand-sand" data-target="tab-facial">
+            <i class="fa-regular fa-face-smile text-xs mr-2"></i>Tratamentos Faciais
+          </button>
+          <button class="tab-btn px-6 py-3 rounded-full text-xs sm:text-sm tracking-wider uppercase font-semibold transition-all duration-300 bg-brand-sand/80 text-brand-charcoal hover:bg-brand-sand" data-target="tab-depilacao">
+            <i class="fa-regular fa-gem text-xs mr-2"></i>Depilação
+          </button>
+        </div>
+
+        <!-- Conteúdo das Abas -->
+        <div class="bg-white rounded-3xl p-6 sm:p-10 md:p-12 border border-brand-sand shadow-sm transition-all">
+          
+          <!-- Painel 1: Unhas -->
+          <div id="tab-unhas" class="tab-panel grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div class="lg:col-span-6 space-y-4">
+              <span class="text-xs uppercase tracking-widest text-brand-rose font-bold">Resistência, Higiene e Durabilidade</span>
+              <h3 class="font-serif text-3xl font-light text-brand-charcoal">Manicure, Pedicure, Unhas em Gel e Fibra</h3>
+              <p class="text-brand-muted text-sm sm:text-base leading-relaxed font-light">
+                Materiais esterilizados em autoclave e produtos de extensão com alta adesão e acabamento fino. Unhas naturais estruturadas, alongamento elegante e esmaltação impecável para a sua rotina dinâmica.
+              </p>
+              <ul class="space-y-2.5 pt-2 text-sm text-brand-charcoal">
+                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-rose text-xs"></i> <span>Alongamento em Fibra de Vidro e Gel Moldado</span></li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-rose text-xs"></i> <span>Banho de gel para unhas naturais sem quebra</span></li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-rose text-xs"></i> <span>Spa dos Pés com hidratação e esfoliação profunda</span></li>
+              </ul>
+              <div class="pt-4">
+                <a href="https://wa.me/5521964107561?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20hor%C3%A1rio%20para%20Unhas%20no%20Studio%20Cacau%20Alves." 
+                   target="_blank" 
+                   class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-brand-rose hover:bg-brand-roseDark text-white text-xs uppercase tracking-widest font-semibold transition-colors">
+                  <span>Agendar Horário de Unha</span>
+                  <i class="fa-brands fa-whatsapp"></i>
+                </a>
+              </div>
+            </div>
+            <div class="lg:col-span-6 rounded-2xl overflow-hidden aspect-[16/10] shadow-md">
+              <img src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&fit=crop&w=800&q=80" 
+                   alt="Serviço de unhas e manicure com acabamento refinado" 
+                   class="w-full h-full object-cover"
+                   loading="lazy"
+                   onerror="this.src='https://placehold.co/800x500/EFE8E3/9E5A63?text=Unhas+em+Gel+e+Fibra'">
+            </div>
+          </div>
+
+          <!-- Painel 2: Cílios e Sobrancelhas -->
+          <div id="tab-olhar" class="tab-panel hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div class="lg:col-span-6 space-y-4">
+              <span class="text-xs uppercase tracking-widest text-brand-rose font-bold">Simetria e Expressividade</span>
+              <h3 class="font-serif text-3xl font-light text-brand-charcoal">Extensão, Lash Lifting & Design de Sobrancelhas</h3>
+              <p class="text-brand-muted text-sm sm:text-base leading-relaxed font-light">
+                Valorize o seu olhar respeitando a anatomia natural do seu rosto. Técnicas leves que não pesam na pálpebra e fios isolados um a um para máxima segurança ocular.
+              </p>
+              <ul class="space-y-2.5 pt-2 text-sm text-brand-charcoal">
+                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-rose text-xs"></i> <span>Extensão Clássica Fio a Fio e Volume Brasileiro</span></li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-rose text-xs"></i> <span>Lash Lifting para curvatura natural dos próprios cílios</span></li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-rose text-xs"></i> <span>Design Personalizado com aplicação de Henna / Coloração</span></li>
+              </ul>
+              <div class="pt-4">
+                <a href="https://wa.me/5521964107561?text=Ol%C3%A1!%20Desejo%20agendar%20Design%20de%20Sobrancelhas%20ou%20C%C3%ADlios." 
+                   target="_blank" 
+                   class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-brand-rose hover:bg-brand-roseDark text-white text-xs uppercase tracking-widest font-semibold transition-colors">
+                  <span>Agendar Olhar & Sobrancelhas</span>
+                  <i class="fa-brands fa-whatsapp"></i>
+                </a>
+              </div>
+            </div>
+            <div class="lg:col-span-6 rounded-2xl overflow-hidden aspect-[16/10] shadow-md">
+              <img src="https://images.unsplash.com/photo-1583001809873-a128495da465?auto=format&fit=crop&w=800&q=80" 
+                   alt="Extensão e alinhamento de cílios e sobrancelhas" 
+                   class="w-full h-full object-cover"
+                   loading="lazy"
+                   onerror="this.src='https://placehold.co/800x500/EFE8E3/9E5A63?text=Design+de+Sobrancelhas'">
+            </div>
+          </div>
+
+          <!-- Painel 3: Tratamentos Faciais -->
+          <div id="tab-facial" class="tab-panel hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div class="lg:col-span-6 space-y-4">
+              <span class="text-xs uppercase tracking-widest text-brand-rose font-bold">Pele Radiante e Descansada</span>
+              <h3 class="font-serif text-3xl font-light text-brand-charcoal">Tratamentos Faciais Revigorantes</h3>
+              <p class="text-brand-muted text-sm sm:text-base leading-relaxed font-light">
+                Limpeza de pele profunda sem dor agressiva, hidratações tensores e renovação celular. Cuidados minuciosos para devolver a luminosidade natural e o frescor da pele.
+              </p>
+              <ul class="space-y-2.5 pt-2 text-sm text-brand-charcoal">
+                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-rose text-xs"></i> <span>Limpeza de Pele Profunda com extração cuidadosa</span></li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-rose text-xs"></i> <span>Peeling Diamantado e Revitalização com Vitaminas</span></li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-rose text-xs"></i> <span>Protocolos anti-oleosidade e hidratação iluminadora</span></li>
+              </ul>
+              <div class="pt-4">
+                <a href="https://wa.me/5521964107561?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20Tratamentos%20Faciais." 
+                   target="_blank" 
+                   class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-brand-rose hover:bg-brand-roseDark text-white text-xs uppercase tracking-widest font-semibold transition-colors">
+                  <span>Agendar Sessão Facial</span>
+                  <i class="fa-brands fa-whatsapp"></i>
+                </a>
+              </div>
+            </div>
+            <div class="lg:col-span-6 rounded-2xl overflow-hidden aspect-[16/10] shadow-md">
+              <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80" 
+                   alt="Tratamento e limpeza de pele facial em ambiente relaxante" 
+                   class="w-full h-full object-cover"
+                   loading="lazy"
+                   onerror="this.src='https://placehold.co/800x500/EFE8E3/9E5A63?text=Tratamentos+Faciais'">
+            </div>
+          </div>
+
+          <!-- Painel 4: Depilação -->
+          <div id="tab-depilacao" class="tab-panel hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div class="lg:col-span-6 space-y-4">
+              <span class="text-xs uppercase tracking-widest text-brand-rose font-bold">Toque Sedoso & Suavidade</span>
+              <h3 class="font-serif text-3xl font-light text-brand-charcoal">Depilação com Conforto Térmico</h3>
+              <p class="text-brand-muted text-sm sm:text-base leading-relaxed font-light">
+                Métodos que priorizam o menor desconforto possível, utilizando ceras descartáveis com propriedades calmantes que não agridem a derme sensível.
+              </p>
+              <ul class="space-y-2.5 pt-2 text-sm text-brand-charcoal">
+                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-rose text-xs"></i> <span>Material 100% descartável e rigor higiênico</span></li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-rose text-xs"></i> <span>Ceras enriquecidas com extratos calmantes</span></li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-rose text-xs"></i> <span>Atendimento ágil com cabine individual climatizada</span></li>
+              </ul>
+              <div class="pt-4">
+                <a href="https://wa.me/5521964107561?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20de%20depila%C3%A7%C3%A3o." 
+                   target="_blank" 
+                   class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-brand-rose hover:bg-brand-roseDark text-white text-xs uppercase tracking-widest font-semibold transition-colors">
+                  <span>Agendar Depilação</span>
+                  <i class="fa-brands fa-whatsapp"></i>
+                </a>
+              </div>
+            </div>
+            <div class="lg:col-span-6 rounded-2xl overflow-hidden aspect-[16/10] shadow-md">
+              <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80" 
+                   alt="Procedimentos estéticos e depilação em cabine acolhedora" 
+                   class="w-full h-full object-cover"
+                   loading="lazy"
+                   onerror="this.src='https://placehold.co/800x500/EFE8E3/9E5A63?text=Depilacao+Studio+Cacau'">
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERIA MASONRY COM COLUNAS DE ALTURAS VARIADAS -->
+    <section id="galeria" class="py-24 bg-brand-sand/40 border-y border-brand-sand">
+      <div class="max-w-7xl mx-auto px-6 md:px-12">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+          <div>
+            <span class="editorial-badge text-xs uppercase tracking-widest text-brand-rose font-semibold mb-3 block">
+              Galeria Editorial
+            </span>
+            <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-light text-brand-charcoal">
+              A elegância refletida em <span class="italic font-normal text-brand-rose">cada resultado</span>
+            </h2>
+          </div>
+          <a href="https://www.instagram.com/_cacaualves" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             class="inline-flex items-center gap-2 text-sm text-brand-rose font-semibold uppercase tracking-wider hover:text-brand-roseDark transition-colors">
+            <span>Acompanhar no Instagram @_cacaualves</span>
+            <i class="fa-brands fa-instagram text-lg"></i>
+          </a>
+        </div>
+
+        <!-- Grade Masonry -->
+        <div class="masonry-gallery">
+          
+          <!-- Item 1 (Vertical Alto) -->
+          <div class="masonry-item group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 bg-white">
+            <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=700&h=900&q=80" 
+                 alt="Cabelo loiro perolado longo e saudável" 
+                 class="w-full h-auto object-cover transform duration-700 group-hover:scale-105"
+                 loading="lazy"
+                 onerror="this.src='https://placehold.co/600x800/FAF6F4/9E5A63?text=Loiro+Perolado'">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end text-white">
+              <span class="text-xs uppercase tracking-widest text-brand-roseLight">Cabelos Loiros</span>
+              <h4 class="font-serif text-lg">Iluminação com Integridade dos Fios</h4>
+            </div>
+          </div>
+
+          <!-- Item 2 (Quadrado Médio) -->
+          <div class="masonry-item group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 bg-white">
+            <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=700&h=650&q=80" 
+                 alt="Cabelo liso com brilho intenso e pontas preservadas" 
+                 class="w-full h-auto object-cover transform duration-700 group-hover:scale-105"
+                 loading="lazy"
+                 onerror="this.src='https://placehold.co/600x600/FAF6F4/9E5A63?text=Alisamento+Perfeito'">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end text-white">
+              <span class="text-xs uppercase tracking-widest text-brand-roseLight">Alisamento Perfeito</span>
+              <h4 class="font-serif text-lg">Alinhamento e Sedosidade com Toque Macio</h4>
+            </div>
+          </div>
+
+          <!-- Item 3 (Vertical Médio) -->
+          <div class="masonry-item group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 bg-white">
+            <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=700&h=800&q=80" 
+                 alt="Alongamento de unhas em fibra de vidro com esmaltação nude" 
+                 class="w-full h-auto object-cover transform duration-700 group-hover:scale-105"
+                 loading="lazy"
+                 onerror="this.src='https://placehold.co/600x750/FAF6F4/9E5A63?text=Unhas+em+Fibra'">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end text-white">
+              <span class="text-xs uppercase tracking-widest text-brand-roseLight">Unhas em Fibra de Vidro</span>
+              <h4 class="font-serif text-lg">Naturalidade e Resistência Duradoura</h4>
+            </div>
+          </div>
+
+          <!-- Item 4 (Quadrado Compacto) -->
+          <div class="masonry-item group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 bg-white">
+            <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=700&h=600&q=80" 
+                 alt="Morena iluminada com mechas cor de canela e avelã" 
+                 class="w-full h-auto object-cover transform duration-700 group-hover:scale-105"
+                 loading="lazy"
+                 onerror="this.src='https://placehold.co/600x600/FAF6F4/9E5A63?text=Morena+Iluminada'">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end text-white">
+              <span class="text-xs uppercase tracking-widest text-brand-roseLight">Mechas Personalizadas</span>
+              <h4 class="font-serif text-lg">Tons Quentes e Transições Perfeitas</h4>
+            </div>
+          </div>
+
+          <!-- Item 5 (Vertical Alto) -->
+          <div class="masonry-item group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 bg-white">
+            <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=700&h=900&q=80" 
+                 alt="Finalização e escovação impecável em salão" 
+                 class="w-full h-auto object-cover transform duration-700 group-hover:scale-105"
+                 loading="lazy"
+                 onerror="this.src='https://placehold.co/600x850/FAF6F4/9E5A63?text=Alta+Performance'">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end text-white">
+              <span class="text-xs uppercase tracking-widest text-brand-roseLight">Tratamento de Alta Performance</span>
+              <h4 class="font-serif text-lg">Recuperação Molecular e Brilho</h4>
+            </div>
+          </div>
+
+          <!-- Item 6 (Médio) -->
+          <div class="masonry-item group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 bg-white">
+            <img src="https://images.unsplash.com/photo-1512290900672-1f55b9a475d4?auto=format&fit=crop&w=700&h=650&q=80" 
+                 alt="Sobrancelhas e olhar valorizado" 
+                 class="w-full h-auto object-cover transform duration-700 group-hover:scale-105"
+                 loading="lazy"
+                 onerror="this.src='https://placehold.co/600x600/FAF6F4/9E5A63?text=Lash+Design'">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end text-white">
+              <span class="text-xs uppercase tracking-widest text-brand-roseLight">Design do Olhar</span>
+              <h4 class="font-serif text-lg">Cílios Alongados com Precisão</h4>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- DEPOIMENTOS EM FORMATO MARQUEE CONTÍNUO (PAUSA ON HOVER) -->
+    <section id="depoimentos" class="py-24 bg-white overflow-hidden">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 mb-12 text-center">
+        <span class="editorial-badge text-xs uppercase tracking-widest text-brand-rose font-semibold mb-3 inline-block">
+          Vozes de Quem Confia
+        </span>
+        <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-light text-brand-charcoal">
+          A confiança de 17 anos em <span class="italic font-normal text-brand-rose">palavras reais</span>
+        </h2>
+        <p class="text-xs sm:text-sm text-brand-muted mt-2">
+          (Passe o cursor sobre os depoimentos para pausar o carrossel)
+        </p>
+      </div>
+
+      <!-- Container do Marquee com transição infinita -->
+      <div class="relative w-full overflow-hidden py-4">
+        <!-- Efeitos de degradê nas laterais para fusão visual -->
+        <div class="absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
+        <div class="absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
+
+        <div class="animate-marquee flex items-center gap-6">
+          
+          <!-- Bloco Original dos 3 Depoimentos Oficiais -->
+          <div class="w-[320px] sm:w-[420px] p-8 rounded-2xl bg-brand-cream border border-brand-sand flex-shrink-0 shadow-sm hover:border-brand-rose/40 transition-colors">
+            <div class="flex text-amber-500 mb-4 text-xs gap-1">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="font-serif italic text-lg sm:text-xl text-brand-charcoal leading-relaxed mb-6">
+              "Ótimo salão, as meninas são maravilhosas, ótimas profissionais."
+            </p>
+            <div class="flex items-center gap-3 border-t border-brand-sand pt-4">
+              <div class="w-9 h-9 rounded-full bg-brand-rose/20 text-brand-rose font-serif font-bold flex items-center justify-center text-sm">
+                A
+              </div>
+              <div>
+                <p class="text-xs font-semibold uppercase tracking-wider text-brand-charcoal">Cliente Verificada</p>
+                <p class="text-[11px] text-brand-muted">Avaliação via Google Maps (5.0 ★)</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="w-[320px] sm:w-[420px] p-8 rounded-2xl bg-brand-cream border border-brand-sand flex-shrink-0 shadow-sm hover:border-brand-rose/40 transition-colors">
+            <div class="flex text-amber-500 mb-4 text-xs gap-1">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="font-serif italic text-lg sm:text-xl text-brand-charcoal leading-relaxed mb-6">
+              "Amo seu trabalho e meu cabelo é sempre seu, cliente fiel."
+            </p>
+            <div class="flex items-center gap-3 border-t border-brand-sand pt-4">
+              <div class="w-9 h-9 rounded-full bg-brand-rose/20 text-brand-rose font-serif font-bold flex items-center justify-center text-sm">
+                C
+              </div>
+              <div>
+                <p class="text-xs font-semibold uppercase tracking-wider text-brand-charcoal">Cliente Fiel</p>
+                <p class="text-[11px] text-brand-muted">Avaliação via Google Maps (5.0 ★)</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="w-[320px] sm:w-[420px] p-8 rounded-2xl bg-brand-cream border border-brand-sand flex-shrink-0 shadow-sm hover:border-brand-rose/40 transition-colors">
+            <div class="flex text-amber-500 mb-4 text-xs gap-1">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="font-serif italic text-lg sm:text-xl text-brand-charcoal leading-relaxed mb-6">
+              "Serviços todos de qualidade e resultados impecáveis."
+            </p>
+            <div class="flex items-center gap-3 border-t border-brand-sand pt-4">
+              <div class="w-9 h-9 rounded-full bg-brand-rose/20 text-brand-rose font-serif font-bold flex items-center justify-center text-sm">
+                M
+              </div>
+              <div>
+                <p class="text-xs font-semibold uppercase tracking-wider text-brand-charcoal">Cliente Verificada</p>
+                <p class="text-[11px] text-brand-muted">Avaliação via Google Maps (5.0 ★)</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Duplicação idêntica para o loop infinito contínuo e suave -->
+          <div class="w-[320px] sm:w-[420px] p-8 rounded-2xl bg-brand-cream border border-brand-sand flex-shrink-0 shadow-sm hover:border-brand-rose/40 transition-colors">
+            <div class="flex text-amber-500 mb-4 text-xs gap-1">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="font-serif italic text-lg sm:text-xl text-brand-charcoal leading-relaxed mb-6">
+              "Ótimo salão, as meninas são maravilhosas, ótimas profissionais."
+            </p>
+            <div class="flex items-center gap-3 border-t border-brand-sand pt-4">
+              <div class="w-9 h-9 rounded-full bg-brand-rose/20 text-brand-rose font-serif font-bold flex items-center justify-center text-sm">
+                A
+              </div>
+              <div>
+                <p class="text-xs font-semibold uppercase tracking-wider text-brand-charcoal">Cliente Verificada</p>
+                <p class="text-[11px] text-brand-muted">Avaliação via Google Maps (5.0 ★)</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="w-[320px] sm:w-[420px] p-8 rounded-2xl bg-brand-cream border border-brand-sand flex-shrink-0 shadow-sm hover:border-brand-rose/40 transition-colors">
+            <div class="flex text-amber-500 mb-4 text-xs gap-1">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="font-serif italic text-lg sm:text-xl text-brand-charcoal leading-relaxed mb-6">
+              "Amo seu trabalho e meu cabelo é sempre seu, cliente fiel."
+            </p>
+            <div class="flex items-center gap-3 border-t border-brand-sand pt-4">
+              <div class="w-9 h-9 rounded-full bg-brand-rose/20 text-brand-rose font-serif font-bold flex items-center justify-center text-sm">
+                C
+              </div>
+              <div>
+                <p class="text-xs font-semibold uppercase tracking-wider text-brand-charcoal">Cliente Fiel</p>
+                <p class="text-[11px] text-brand-muted">Avaliação via Google Maps (5.0 ★)</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="w-[320px] sm:w-[420px] p-8 rounded-2xl bg-brand-cream border border-brand-sand flex-shrink-0 shadow-sm hover:border-brand-rose/40 transition-colors">
+            <div class="flex text-amber-500 mb-4 text-xs gap-1">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="font-serif italic text-lg sm:text-xl text-brand-charcoal leading-relaxed mb-6">
+              "Serviços todos de qualidade e resultados impecáveis."
+            </p>
+            <div class="flex items-center gap-3 border-t border-brand-sand pt-4">
+              <div class="w-9 h-9 rounded-full bg-brand-rose/20 text-brand-rose font-serif font-bold flex items-center justify-center text-sm">
+                M
+              </div>
+              <div>
+                <p class="text-xs font-semibold uppercase tracking-wider text-brand-charcoal">Cliente Verificada</p>
+                <p class="text-[11px] text-brand-muted">Avaliação via Google Maps (5.0 ★)</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- LOCALIZAÇÃO & HORÁRIO DE ATENDIMENTO -->
+    <section class="py-24 bg-brand-sand/30 border-t border-brand-sand">
+      <div class="max-w-7xl mx-auto px-6 md:px-12">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <!-- Informações de Endereço e Horários (5 Colunas) -->
+          <div class="lg:col-span-5 space-y-6">
+            <span class="editorial-badge text-xs uppercase tracking-widest text-brand-rose font-semibold block">
+              Nosso Espaço
+            </span>
+            <h2 class="font-serif text-3xl sm:text-4xl font-light text-brand-charcoal leading-tight">
+              Fácil acesso em Irajá, Rio de Janeiro
+            </h2>
+            <p class="text-brand-muted text-sm sm:text-base font-light">
+              Ambiente climatizado, aconchegante e planejado para o seu descanso enquanto realça a sua beleza.
+            </p>
+
+            <div class="space-y-4 pt-4 border-t border-brand-sand text-sm">
+              <div class="flex items-start gap-3">
+                <i class="fa-solid fa-location-dot text-brand-rose text-lg mt-1"></i>
+                <div>
+                  <h4 class="font-semibold text-brand-charcoal">Endereço Completo</h4>
+                  <p class="text-brand-muted leading-relaxed">
+                    Estr. da Água Grande, 242 - Sl 102<br>
+                    Irajá, Rio de Janeiro - RJ, CEP 21230-363
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <i class="fa-regular fa-clock text-brand-rose text-lg mt-1"></i>
+                <div>
+                  <h4 class="font-semibold text-brand-charcoal">Horário de Atendimento</h4>
+                  <p class="text-brand-muted">
+                    Segunda a Sábado: das 09h às 22h<br>
+                    <span class="text-xs text-brand-rose font-medium">Aberto com atendimento pontual com hora marcada</span>
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <i class="fa-brands fa-whatsapp text-brand-rose text-lg mt-1"></i>
+                <div>
+                  <h4 class="font-semibold text-brand-charcoal">Contato Direto</h4>
+                  <p class="text-brand-muted">(21) 96410-7561</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-2">
+              <a href="https://maps.google.com/?q=Estr.+da+Água+Grande,+242+-+Irajá,+Rio+de+Janeiro+-+RJ,+21230-363" 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-brand-rose hover:text-brand-roseDark transition-colors">
+                <span>Abrir rota no Google Maps</span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Embed Google Maps Realista e Estilizado (7 Colunas) -->
+          <div class="lg:col-span-7">
+            <div class="rounded-3xl overflow-hidden shadow-lg border-4 border-white h-[380px] w-full relative">
+              <iframe 
+                title="Localização do Studio Cacau Alves no Google Maps"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3677.291771120286!2d-43.32832562473859!3d-22.82885973511874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9964528f804561%3A0x67dbad97305988e0!2sEstr.%20da%20%C3%81gua%20Grande%2C%20242%20-%20Iraj%C3%A1%2C%20Rio%20de%20Janeiro%20-%20RJ%2C%2021230-363!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" 
+                class="w-full h-full border-0" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO / PRÉ-AGENDAMENTO FINAL COM CONVERSÃO EM WHATSAPP -->
+    <section id="contato" class="py-24 bg-brand-charcoal text-white relative overflow-hidden">
+      <!-- Glow decorativo de fundo -->
+      <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-brand-roseDark/40 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          
+          <!-- Chamada de Impacto (6 Colunas) -->
+          <div class="lg:col-span-6 space-y-6">
+            <span class="text-xs uppercase tracking-[0.25em] text-brand-roseLight font-bold">
+              Reserve Seu Momento
+            </span>
+            <h2 class="font-serif text-3xl sm:text-5xl font-light leading-tight">
+              Permita-se viver a experiência de <span class="italic font-normal text-brand-roseLight">cuidar de você</span> com especialistas.
+            </h2>
+            <p class="text-brand-sand/80 text-sm sm:text-base font-light leading-relaxed">
+              Atendimento com hora marcada para assegurar total dedicação, tranquilidade e pontualidade ao seu momento de beleza.
+            </p>
+
+            <div class="pt-4 flex flex-col sm:flex-row gap-4">
+              <a href="https://wa.me/5521964107561?text=Ol%C3%A1%2C%20Cacau%20Alves!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20no%20Studio." 
+                 target="_blank" 
+                 class="inline-flex justify-center items-center gap-3 px-8 py-4 rounded-full bg-brand-rose hover:bg-brand-roseLight text-white text-xs sm:text-sm uppercase tracking-widest font-semibold shadow-xl transition-all duration-300">
+                <i class="fa-brands fa-whatsapp text-xl"></i>
+                <span>Chamar no WhatsApp Direto</span>
+              </a>
+            </div>
+
+            <!-- Links Rápidos -->
+            <div class="pt-6 border-t border-white/10 flex items-center gap-6 text-sm text-brand-sand/70">
+              <a href="https://www.instagram.com/_cacaualves" target="_blank" class="hover:text-white transition-colors flex items-center gap-2">
+                <i class="fa-brands fa-instagram text-lg text-brand-roseLight"></i>
+                <span>@_cacaualves</span>
+              </a>
+              <span class="text-white/20">|</span>
+              <span class="flex items-center gap-2">
+                <i class="fa-solid fa-phone text-xs text-brand-roseLight"></i>
+                <span>(21) 96410-7561</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Formulário Interativo que Converte em WhatsApp (6 Colunas) -->
+          <div class="lg:col-span-6 bg-white/5 border border-white/10 rounded-3xl p-8 sm:p-10 backdrop-blur-md">
+            <h3 class="font-serif text-2xl font-light text-white mb-2">Pré-Agendamento Rápido</h3>
+            <p class="text-xs text-brand-sand/70 mb-6">Preencha seus dados para montarmos seu agendamento no WhatsApp:</p>
+
+            <form id="booking-form" class="space-y-4">
+              <div>
+                <label for="client-name" class="block text-xs uppercase tracking-wider text-brand-sand/80 font-medium mb-1.5">Seu Nome</label>
+                <input type="text" id="client-name" required placeholder="Como prefere ser chamada?" 
+                       class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/15 text-white placeholder-gray-400 text-sm focus:outline-none focus:border-brand-roseLight transition-colors">
+              </div>
+
+              <div>
+                <label for="client-phone" class="block text-xs uppercase tracking-wider text-brand-sand/80 font-medium mb-1.5">Seu Telefone / WhatsApp</label>
+                <input type="tel" id="client-phone" required placeholder="(21) 99999-9999" 
+                       class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/15 text-white placeholder-gray-400 text-sm focus:outline-none focus:border-brand-roseLight transition-colors">
+              </div>
+
+              <div>
+                <label for="client-service" class="block text-xs uppercase tracking-wider text-brand-sand/80 font-medium mb-1.5">Serviço Desejado</label>
+                <select id="client-service" required class="w-full px-4 py-3 rounded-xl bg-brand-charcoal border border-white/15 text-white text-sm focus:outline-none focus:border-brand-roseLight transition-colors">
+                  <option value="" disabled selected>Selecione a sua prioridade...</option>
+                  <option value="Alisamento Perfeito">Alisamento Perfeito</option>
+                  <option value="Cabelos Loiros / Descoloração">Cabelos Loiros / Clareamento</option>
+                  <option value="Mechas / Iluminação">Mechas & Morena Iluminada</option>
+                  <option value="Tratamento de Alta Performance">Tratamento de Alta Performance</option>
+                  <option value="Unhas em Gel / Fibra / Manicure">Unhas (Gel, Fibra ou Manicure)</option>
+                  <option value="Extensão de Cílios / Lash Lifting">Extensão de Cílios / Lash Lifting</option>
+                  <option value="Design de Sobrancelhas">Design de Sobrancelhas</option>
+                  <option value="Tratamento Facial / Limpeza de Pele">Tratamento Facial / Limpeza de Pele</option>
+                  <option value="Depilação">Depilação</option>
+                  <option value="Combo Completo de Beleza">Combo Completo</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="client-notes" class="block text-xs uppercase tracking-wider text-brand-sand/80 font-medium mb-1.5">Data ou Horário de Preferência (Opcional)</label>
+                <input type="text" id="client-notes" placeholder="Ex: Sexta-feira pela tarde" 
+                       class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/15 text-white placeholder-gray-400 text-sm focus:outline-none focus:border-brand-roseLight transition-colors">
+              </div>
+
+              <div class="pt-2">
+                <button type="submit" class="w-full py-4 rounded-xl bg-brand-rose hover:bg-brand-roseLight text-white font-semibold text-xs uppercase tracking-widest transition-all duration-300 flex items-center justify-center gap-2 shadow-lg">
+                  <i class="fa-brands fa-whatsapp text-lg"></i>
+                  <span>Enviar Solicitação ao WhatsApp</span>
+                </button>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER EDITORIAL -->
+  <footer class="bg-brand-charcoal border-t border-white/10 text-white/80 py-16">
+    <div class="max-w-7xl mx-auto px-6 md:px-12">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-white/10">
+        
+        <!-- Identidade e Selo de 17 Anos (5 Colunas) -->
+        <div class="md:col-span-5 space-y-4">
+          <span class="font-serif text-2xl font-bold text-white tracking-wide block">
+            Studio Cacau Alves
+          </span>
+          <p class="text-xs uppercase tracking-[0.2em] text-brand-roseLight font-medium">
+            17 Anos de Beleza, Arte e Cuidado
+          </p>
+          <p class="text-xs text-brand-sand/70 font-light max-w-sm leading-relaxed">
+            Especialistas em cabelos deslumbrantes, tratamentos regenerativos e estética integrada para mulheres autênticas.
+          </p>
+        </div>
+
+        <!-- Links Rápidos (3 Colunas) -->
+        <div class="md:col-span-3 space-y-3">
+          <h4 class="text-xs uppercase tracking-widest text-white font-semibold mb-2">Navegação</h4>
+          <ul class="space-y-2 text-xs text-brand-sand/70">
+            <li><a href="#sobre" class="hover:text-white transition-colors">Nossa História</a></li>
+            <li><a href="#especialidades" class="hover:text-white transition-colors">Especialidades Capilares</a></li>
+            <li><a href="#cuidados" class="hover:text-white transition-colors">Menu de Cuidados</a></li>
+            <li><a href="#galeria" class="hover:text-white transition-colors">Galeria Editorial</a></li>
+            <li><a href="#depoimentos" class="hover:text-white transition-colors">Depoimentos Reais</a></li>
+          </ul>
+        </div>
+
+        <!-- Redes e Contato Resumido (4 Colunas) -->
+        <div class="md:col-span-4 space-y-3">
+          <h4 class="text-xs uppercase tracking-widest text-white font-semibold mb-2">Atendimento & Endereço</h4>
+          <p class="text-xs text-brand-sand/70 leading-relaxed">
+            Estr. da Água Grande, 242 - Sl 102<br>
+            Irajá - Rio de Janeiro / RJ
+          </p>
+          <p class="text-xs text-brand-sand/70">
+            WhatsApp: (21) 96410-7561
+          </p>
+          <div class="flex items-center gap-4 pt-2">
+            <a href="https://www.instagram.com/_cacaualves" target="_blank" rel="noopener noreferrer" 
+               aria-label="Instagram de Cacau Alves" 
+               class="w-9 h-9 rounded-full bg-white/10 hover:bg-brand-rose text-white flex items-center justify-center transition-colors">
+              <i class="fa-brands fa-instagram text-sm"></i>
+            </a>
+            <a href="https://wa.me/5521964107561" target="_blank" rel="noopener noreferrer" 
+               aria-label="WhatsApp de Cacau Alves" 
+               class="w-9 h-9 rounded-full bg-white/10 hover:bg-brand-rose text-white flex items-center justify-center transition-colors">
+              <i class="fa-brands fa-whatsapp text-sm"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Copyright e Créditos -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-brand-sand/50 gap-4">
+        <p>© 2009 - 2026 Studio Cacau Alves. Todos os direitos reservados.</p>
+        <p class="tracking-widest uppercase text-[10px]">Elegância • Rigor Técnico • Acolhimento</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT VANILLA INTERATIVO -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      
+      // 1. Efeito de Fundo Sólido no Header ao Rolar (Scroll Effect)
+      const header = document.getElementById('main-header');
+      const handleScroll = () => {
+        if (window.scrollY > 40) {
+          header.classList.add('header-scrolled', 'py-3');
+          header.classList.remove('py-5', 'bg-transparent');
+        } else {
+          header.classList.remove('header-scrolled', 'py-3');
+          header.classList.add('py-5', 'bg-transparent');
+        }
+      };
+      window.addEventListener('scroll', handleScroll, { passive: true });
+      handleScroll(); // Checagem inicial caso a página carregue com rolagem prévia
+
+      // 2. Menu Mobile Hambúrguer (Toggle e fechamento automático ao clicar no link)
+      const menuBtn = document.getElementById('menu-toggle-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const menuIcon = document.getElementById('menu-icon');
+      const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+      if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', () => {
+          const isHidden = mobileMenu.classList.contains('hidden');
+          if (isHidden) {
+            mobileMenu.classList.remove('hidden');
+            menuIcon.classList.remove('fa-bars');
+            menuIcon.classList.add('fa-xmark');
+          } else {
+            mobileMenu.classList.add('hidden');
+            menuIcon.classList.remove('fa-xmark');
+            menuIcon.classList.add('fa-bars');
+          }
+        });
+
+        mobileNavLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            menuIcon.classList.remove('fa-xmark');
+            menuIcon.classList.add('fa-bars');
+          });
+        });
+      }
+
+      // 3. Contadores Animados via IntersectionObserver
+      const counterElements = document.querySelectorAll('.counter-number');
+      let countersTriggered = false;
+
+      const animateCounters = () => {
+        counterElements.forEach(counter => {
+          const target = parseFloat(counter.getAttribute('data-target'));
+          const decimals = parseInt(counter.getAttribute('data-decimals') || '0', 10);
+          const duration = 1800; // Duração em milissegundos
+          const startTime = performance.now();
+
+          const updateNumber = (currentTime) => {
+            const elapsedTime = currentTime - startTime;
+            const progress = Math.min(elapsedTime / duration, 1);
+            
+            // Função de easing (desaceleração natural)
+            const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+            const currentValue = progress === 1 ? target : (target * easeOutQuart);
+
+            counter.innerText = decimals > 0 ? currentValue.toFixed(decimals) : Math.floor(currentValue);
+
+            if (progress < 1) {
+              requestAnimationFrame(updateNumber);
+            } else {
+              counter.innerText = decimals > 0 ? target.toFixed(decimals) : target;
+            }
+          };
+
+          requestAnimationFrame(updateNumber);
+        });
+      };
+
+      const statsSection = document.getElementById('stats-section');
+      if (statsSection && 'IntersectionObserver' in window) {
+        const statsObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting && !countersTriggered) {
+              countersTriggered = true;
+              animateCounters();
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.3 });
+
+        statsObserver.observe(statsSection);
+      } else {
+        // Fallback para navegadores antigos
+        animateCounters();
+      }
+
+      // 4. Tab Switcher para a Seção "Cuidados Completos"
+      const tabButtons = document.querySelectorAll('.tab-btn');
+      const tabPanels = document.querySelectorAll('.tab-panel');
+
+      tabButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const targetId = btn.getAttribute('data-target');
+
+          // Resetar botões
+          tabButtons.forEach(b => {
+            b.classList.remove('bg-brand-rose', 'text-white', 'shadow-md');
+            b.classList.add('bg-brand-sand/80', 'text-brand-charcoal');
+          });
+
+          // Ativar botão clicado
+          btn.classList.add('bg-brand-rose', 'text-white', 'shadow-md');
+          btn.classList.remove('bg-brand-sand/80', 'text-brand-charcoal');
+
+          // Alternar painéis
+          tabPanels.forEach(panel => {
+            if (panel.id === targetId) {
+              panel.classList.remove('hidden');
+            } else {
+              panel.classList.add('hidden');
+            }
+          });
+        });
+      });
+
+      // 5. Formulário de Agendamento com Redirecionamento Personalizado para WhatsApp
+      const bookingForm = document.getElementById('booking-form');
+      if (bookingForm) {
+        bookingForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+
+          const name = document.getElementById('client-name').value.trim();
+          const phone = document.getElementById('client-phone').value.trim();
+          const service = document.getElementById('client-service').value;
+          const notes = document.getElementById('client-notes').value.trim();
+
+          const baseMessage = `Olá, Cacau Alves! Gostaria de solicitar um agendamento:\n\n` +
+                              `• Nome: ${name}\n` +
+                              `• Telefone: ${phone}\n` +
+                              `• Procedimento: ${service}` +
+                              (notes ? `\n• Preferência de horário: ${notes}` : '');
+
+          const encodedMessage = encodeURIComponent(baseMessage);
+          const whatsappURL = `https://wa.me/5521964107561?text=${encodedMessage}`;
+
+          window.open(whatsappURL, '_blank');
+        });
+      }
+
+    });
+  </script>
+</body>
+</html>
